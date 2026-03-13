@@ -26,6 +26,27 @@ textarea {
     font-family: Consolas, monospace;
 }
 
+.input-row {
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.input-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.input-row input {
+    width: 220px;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
 .button-row {
     margin-top: 12px;
 }
@@ -41,56 +62,112 @@ button {
     margin-right: 8px;
 }
 
+button:hover {
+    opacity: 0.92;
+}
+
 button.secondary {
     background: #6c757d;
 }
 
 #message {
-    margin-top: 16px;
+    margin-top: 18px;
 }
 
 .message {
     padding: 12px 14px;
     border-radius: 8px;
-    line-height: 1.5;
     margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.message.success {
+    background: #e8f7ec;
+    color: #1f6f3d;
+    border: 1px solid #b7e4c7;
 }
 
 .message.error {
-    background: #fdeaea;
+    background: #fdecec;
     color: #b42318;
     border: 1px solid #f5c2c7;
 }
 
-.message.success {
-    background: #eaf7ed;
-    color: #1e6b34;
-    border: 1px solid #b7dfc2;
-}
-
 #result {
     margin-top: 20px;
-    overflow-x: auto;
+}
+
+.stats-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.stats-block h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.stats-block div {
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 th,
 td {
     border: 1px solid #ddd;
-    padding: 10px 12px;
+    padding: 12px 8px;
     text-align: center;
-    font-family: Consolas, monospace;
+    vertical-align: middle;
 }
 
 th {
-    background: #f1f3f5;
+    background: #f0f2f5;
+    font-weight: bold;
 }
 
-tr:nth-child(even) td {
-    background: #fafafa;
+.card-value {
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card-state {
+    display: inline-block;
+    min-width: 44px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.state-compose {
+    background: #e8f7ec;
+    color: #1f6f3d;
+    border: 1px solid #b7e4c7;
+}
+
+.state-disassemble {
+    background: #fff4e5;
+    color: #b54708;
+    border: 1px solid #f5d08a;
+}
+
+.state-unused {
+    background: #f2f4f7;
+    color: #475467;
+    border: 1px solid #d0d5dd;
 }
