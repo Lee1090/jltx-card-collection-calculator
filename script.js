@@ -224,6 +224,9 @@ function renderResult(parsedRows, stats, initialFragments) {
         <div class="stats-block">
             <h3>Summary</h3>
             <div>Initial Fragments: ${initialFragments}</div>
+            <div>Composed Cards: ${stats.composedCount}</div>
+            <div>Remaining Fragments: ${stats.remainingFragments}</div>
+        </div>
             <div>Disassembled Cards: ${stats.disassembledCount}</div>
             <div>Composed Cards: ${stats.composedCount}</div>
             <div>Remaining Fragments: ${stats.remainingFragments}</div>
