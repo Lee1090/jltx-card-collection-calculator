@@ -1,32 +1,79 @@
-function calculate() {
+function clearMessage() {
+    resultEl.innerHTML = "";
+    clearMessage();
 
-    let text = document.getElementById("input").value.trim();
-
-    if (text === "") {
-        document.getElementById("result").innerText = "No input";
+    if (input === "") {
+        showMessage("Please paste your card data first.", "error");
         return;
     }
 
-    // 按换行拆分
-    let rows = text.split("\n");
+    const rows = input.split(/\r?\n/).filter(row => row.trim() !== "");
 
-    let output = "Parsed result:\n\n";
+    if (rows.length !== 10) {
+        showMessage(`Input must contain exactly 10 rows. Current rows: ${rows.length}.`, "error");
+        return;
+    }
 
-    rows.forEach((row, rowIndex) => {
+    const parsedRows = [];
 
-        // 按空格拆分
-        let numbers = row.trim().split(/\s+/);
+    for (let i = 0; i < rows.length; i++) {
+        const rowText = rows[i].trim();
+        const numbers = rowText.split(/\s+/);
 
-        output += "Row " + (rowIndex + 1) + ": ";
+        if (numbers.length !== 5) {
+            showMessage(`Row ${i + 1} must contain exactly 5 numbers. Current count: ${numbers.length}.`, "error");
+            return;
+        }
 
-        numbers.forEach(num => {
-            output += num + " ";
-        });
+        for (let j = 0; j < numbers.length; j++) {
+            const value = numbers[j];
 
-        output += "\n";
+            if (!isValidTernaryCard(value)) {
+                showMessage(
+                    `Row ${i + 1}, Column ${j + 1} is invalid: "${value}". Each value must be a 4-digit ternary number using only 0, 1, and 2.`,
+                    "error"
+                );
+                return;
+            }
+        }
 
-    });
+        parsedRows.push(numbers);
+    }
 
-    document.getElementById("result").innerText = output;
+    showMessage("Input is valid. Showing preview below.", "success");
 
+    let html = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>C1</th>
+                    <th>C2</th>
+                    <th>C3</th>
+                    <th>C4</th>
+                    <th>C5</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    for (let i = 0; i < parsedRows.length; i++) {
+        html += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${parsedRows[i][0]}</td>
+                <td>${parsedRows[i][1]}</td>
+                <td>${parsedRows[i][2]}</td>
+                <td>${parsedRows[i][3]}</td>
+                <td>${parsedRows[i][4]}</td>
+            </tr>
+        `;
+    }
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    resultEl.innerHTML = html;
 }
