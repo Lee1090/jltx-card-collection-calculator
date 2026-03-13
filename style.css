@@ -45,6 +45,52 @@ button.secondary {
     background: #6c757d;
 }
 
+#message {
+    margin-top: 16px;
+}
+
+.message {
+    padding: 12px 14px;
+    border-radius: 8px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.message.error {
+    background: #fdeaea;
+    color: #b42318;
+    border: 1px solid #f5c2c7;
+}
+
+.message.success {
+    background: #eaf7ed;
+    color: #1e6b34;
+    border: 1px solid #b7dfc2;
+}
+
 #result {
     margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+    font-family: Consolas, monospace;
+}
+
+th {
+    background: #f1f3f5;
+}
+
+tr:nth-child(even) td {
+    background: #fafafa;
 }
