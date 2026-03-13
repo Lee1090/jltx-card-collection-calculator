@@ -227,12 +227,7 @@ function renderResult(parsedRows, stats, initialFragments) {
             <div>Composed Cards: ${stats.composedCount}</div>
             <div>Remaining Fragments: ${stats.remainingFragments}</div>
         </div>
-            <div>Disassembled Cards: ${stats.disassembledCount}</div>
-            <div>Composed Cards: ${stats.composedCount}</div>
-            <div>Remaining Fragments: ${stats.remainingFragments}</div>
-            <div>Total Fragments Available: ${stats.totalFragmentsAvailable}</div>
-        </div>
-
+        
         <table>
             <thead>
                 <tr>
