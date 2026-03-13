@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JLTX Card Collection Calculator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLTX Card Collection Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>JLTX Card Collection Calculator</h1>
+    <h1>JLTX Card Collection Calculator</h1>
 
-<textarea id="input" placeholder="Paste your card data here"></textarea>
+    <textarea id="input" placeholder="Paste your card data here"></textarea>
 
-<div class="button-row">
-<button onclick="calculate()">Show Input</button>
-<button class="secondary" onclick="clearInput()">Clear</button>
-</div>
+    <!-- 初始碎片输入框，默认值为 0 -->
+    <div class="input-row">
+        <label for="initialFragments">Initial Fragments</label>
+        <input id="initialFragments" type="number" value="0" min="0">
+    </div>
 
-<div id="message"></div>
-<div id="result"></div>
+    <div class="button-row">
+        <button onclick="calculate()">Calculate</button>
+        <button class="secondary" onclick="clearInput()">Clear</button>
+    </div>
+
+    <div id="message"></div>
+    <div id="result"></div>
 
 </div>
 
