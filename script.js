@@ -1,4 +1,26 @@
 function clearMessage() {
+    document.getElementById("message").innerHTML = "";
+}
+
+function showMessage(text, type) {
+    document.getElementById("message").innerHTML =
+        `<div class="message ${type}">${text}</div>`;
+}
+
+function clearInput() {
+    document.getElementById("input").value = "";
+    document.getElementById("result").innerHTML = "";
+    clearMessage();
+}
+
+function isValidTernaryCard(value) {
+    return /^[012]{4}$/.test(value);
+}
+
+function calculate() {
+    const input = document.getElementById("input").value.trim();
+    const resultEl = document.getElementById("result");
+
     resultEl.innerHTML = "";
     clearMessage();
 
