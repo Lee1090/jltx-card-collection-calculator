@@ -12,6 +12,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 24px;   /* 👈 控制标题大小 */
 }
 
 textarea {
