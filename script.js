@@ -1,3 +1,15 @@
+const HERO_NAMES = [
+    "青云剑侠",
+    "天下归心",
+    "比翼同心",
+    "草船借箭",
+    "北斗贪狼",
+    "绝世风华",
+    "盛世烟云",
+    "瑶池仙子",
+    "墨守城归",
+    "笔伐天下"
+];
 function clearMessage() {
     document.getElementById("message").innerHTML = "";
 }
@@ -243,7 +255,14 @@ function renderResult(parsedRows, stats, initialFragments) {
     `;
 
     for (let i = 0; i < parsedRows.length; i++) {
-        html += `<tr><td>${i + 1}</td>`;
+        const heroName = HERO_NAMES[i] || "";
+        html += `
+            <tr>
+                <td class="row-header-cell">
+                    <div class="row-number">${i + 1}</div>
+                    <div class="hero-name">${heroName}</div>
+                </td>
+        `;
 
         for (let j = 0; j < parsedRows[i].length; j++) {
             const card = parsedRows[i][j];
