@@ -171,3 +171,20 @@ th {
     color: #475467;
     border: 1px solid #d0d5dd;
 }
+
+.row-header-cell {
+    min-width: 120px;
+}
+
+.row-number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.hero-name {
+    font-size: 13px;
+    color: #667085;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
