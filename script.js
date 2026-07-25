@@ -317,3 +317,26 @@ function calculate() {
         showMessage(error.message || "Calculation failed.", "error");
     }
 }
+
+async function recordVisit() {
+    try {
+        const response = await fetch(
+            "https://jltx-visit-logger.sleeyer1090.workers.dev/visit",
+            {
+                method: "POST"
+            }
+        );
+
+        if (!response.ok) {
+            console.warn(
+                "Failed to record visit:",
+                response.status,
+                response.statusText
+            );
+        }
+    } catch (error) {
+        console.warn("Failed to record visit:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", recordVisit);
